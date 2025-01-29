@@ -23,9 +23,32 @@ screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 DARK_BROWN=(150, 112, 109)
 CYAN=(3, 252, 239)
 GREEN=(47, 232, 172)
+YELLOW=(252, 232, 3)
+BLACK=(25, 30, 54)
+PURPLE=(198, 3, 252)
+LIGHT_BLUE=(3, 148, 252)
+VERY_LIGHT_BLUE=(184, 255, 255)
+DARK_GREEN=(7, 179, 79)
+BLUE=(5, 150, 247)
+ROYAL_BLUE=(5, 156, 250)
+ICEWING_LIGHT_BLUE=(193, 246, 247)
+SANDWING_YELLOW=(250, 241, 90)
+PINK=(242, 119, 218)
+WHITE=(255,255,255)
 COLORS={"Clay":DARK_BROWN,
         "Tsunami":CYAN,
-        "Glory":GREEN,}
+        "Glory":GREEN,
+        "Kinkajou":YELLOW,
+        "Moon":BLACK,
+        "Tamarin":PURPLE,
+        "Riptide":LIGHT_BLUE,
+        "Anemone":VERY_LIGHT_BLUE,
+        "Auklet":DARK_GREEN,
+        "Webs":BLUE,
+        "Queen_Coral":ROYAL_BLUE,
+        "Winter":ICEWING_LIGHT_BLUE,
+        "Qibli":SANDWING_YELLOW,
+        "Narrator":PINK}
        
 
 character_image_paths={"Clay":"WOF dragon images/Clay.png",
@@ -54,7 +77,11 @@ def load_dragons():
             images[character]=pygame.transform.scale(image,(150,150))
         except:
             surface=pygame.Surface((150,150))
-
+            surface.fill(COLORS.get(character,WHITE))
+            images[character]=surface
+    return images
+#load character images
+character_images=load_dragons()
 
         
 story=[{"speaker":"Moon","text":"We have three months off from school; we might as well do something.","previous_speaker":None},
@@ -79,6 +106,14 @@ story=[{"speaker":"Moon","text":"We have three months off from school; we might 
       {"speaker":"Moon","text":"9/10 I guess."},
       {"speaker":"Kinkajou","text":"ohh, yeah, isn't that our teacher who's obsessed with food? decent 8/10"},
       ]
+
+def display_text_and_images(speaker,text,previous_speaker):
+    screen.fill(WHITE)
+    if previous_speaker and previous_speaker !="narrator":
+    #display both previous and current speaker images
+        previous_image=character_images[previous_speaker]
+    #draw previous speaker's image
+    screen.blit(previous_image,())
 
 
 

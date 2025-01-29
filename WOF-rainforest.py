@@ -622,7 +622,7 @@ def chess():
     say("speaker":"Kinkajou", "text": "I read it in a scroll about scavengers. It's a holiday that they celebrate.")
     say("speaker": "Moon", "text":"Oh, yeah. I remember reading that scroll about a year ago, but I'd forgotten what the holiday was called. Scavengers can actully celebrate!")
     say("Winter","*pops his head in* of course they can! Remember that time we saw them building a house? They're incredibly clever for animals.")
-    say("speaker":"Kinkajou", "text": "Why should we let animals have all the fun? We could celebrate too! According to the scroll, Christmas is where scavengers have a certain day to exchange presents. Some baby scavengers are actually naive enough to think the presents from their parents are from some scavenger with a beard who wears red. I think its name is Sanatizer? ")
+    say("speaker":"Kinkajou", "text": "Why should we let animals have all the fun? We could celebrate too! According to the scroll, Christmas is where scavengers have a certain day to exchange presents. Some baby scavengers are actually naive enough to think the presents from their parents are from some scavenger with a beard who wears red. ")
     say("speaker": "Moon", "text":"I guess we could try celebrating that. Exchanging presents sound fun.")
     say("Kinkjou","We have to put the gifts under a tree in boxes so they'll be hidden and each dragon will be suprised when they open their boxes. Of course, we can also write wist lists for each other so we know what everyone wants for a present. Can we not do that? I want to be suprised, especially by Winter.")
     say("speaker": "Moon", "text":"Wow. This holiday sounds fun.")
