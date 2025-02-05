@@ -13,7 +13,7 @@ SCREEN_WIDTH=800
 SCREEN_HEIGHT=600
 screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
-
+text_font=pygame.font.Font("Hey Comic.ttf",90)
 
 
 
@@ -82,6 +82,7 @@ def load_dragons():
     return images
 #load character images
 character_images=load_dragons()
+#list of dragon characters
 
         
 story=[{"speaker":"Moon","text":"We have three months off from school; we might as well do something.","previous_speaker":None},
@@ -107,13 +108,26 @@ story=[{"speaker":"Moon","text":"We have three months off from school; we might 
       {"speaker":"Kinkajou","text":"ohh, yeah, isn't that our teacher who's obsessed with food? decent 8/10"},
       ]
 
-def display_text_and_images(speaker,text,previous_speaker):
+def display_text_and_images(speaker1,text1,speaker2=None,text2=None):
     screen.fill(WHITE)
-    if previous_speaker and previous_speaker !="narrator":
-    #display both previous and current speaker images
-        previous_image=character_images[previous_speaker]
-    #draw previous speaker's image
-    screen.blit(previous_image,())
+    if speaker1 !="narrator":
+        image1=character_images[speaker1]
+        screen.blit(image1,(200,300))
+    if speaker2 and speaker2 !="narrator":
+        image2=character_images[speaker2]
+        screen.blit(image2,(600,300))
+    color1=COLORS.get(speaker1,WHITE)
+    #speaker1's color is stored in color1
+    speaker1_name=text_font.render(f"{speaker1}",True,color1)
+    screen.blit(speaker1_name,(200,250))
+    dialouge=text1.split("\n")
+    y_offset=500
+    for line in dialouge:
+        display_text=text_font.render(line,True,color1)
+        screen.blit(display_text,(200,y_offset))
+        y_offset+=40
+    
+    
 
 
 
